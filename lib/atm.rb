@@ -1,3 +1,5 @@
+require 'date'
+
 class ATM 
     attr_accessor :funds
 
@@ -5,8 +7,15 @@ class ATM
         @funds = 1000
     end
 
-    def withdraw(amount)
-        @funds -= amount
+    def withdraw(amount, account)
+        case
+        when amount > account.balance
+           return  
+        else
+            @funds -= amount
+            account.balance = account.balance - amount  
+            { status: true, message: 'success', date: Date.today.strftime('%F'), amount: amount }
+        end
     end
 
 end
