@@ -37,9 +37,21 @@ class ATM # Creating blueprints for ATM
     def preform_transaction(amount, account)
         @funds -= amount
         account.balance = account.balance - amount
-        { status: true, message: 'success', date: Date.today, amount: amount } # Subtracts amount from both ATM fund and account balance + produces user message
+        { status: true, message: 'success', date: Date.today, amount: amount, bills: add_bills(amount) } # Subtracts amount from both ATM fund and account balance + produces user message
     end
 
+    def add_bills(amount)
+        denominations = [20, 10, 5]
+        bills = []
+        denominations.each do |bill|
+            while amount - bill >= 0
+                amount -= bill
+                bills << bill
+            end
+        end
+        bills
+    end
+    
     private
 
     def insufficient_funds_in_atm?(amount)
