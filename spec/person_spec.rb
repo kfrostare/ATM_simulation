@@ -10,7 +10,7 @@ describe Person do
     end # Testing that there is a name (Thomas) present
 
     it 'is expected to raise an error if no name is set' do
-        expect { described_class.new }.to raise_error 'A person name is required'
+        expect{ described_class.new }.to raise_error 'A person name is required'
     end # Testing that there is an error message when name is missing
 
     it 'is expected to have a :cash attribute with the value of 0 on initialize' do
@@ -31,19 +31,20 @@ describe Person do
         end
     end
 
-    # describe 'can manage funds if an account has been created' do # Testing if program can connect to Atm class to interact with balance and deposit
-    #     let(:atm) { Atm.new }
-    #     before { subject.create_account }
-    #     it 'can deposit funds' do
-    #         expect(subject.deposit(100)).to be_truthy
-    #     end
+     describe 'can manage funds if an account has been created' do # Testing if program can connect to Atm class to interact with balance and deposit
+         let(:atm) { Atm.new }
+         before { subject.create_account }
+         it 'can deposit funds' do
+            expect(subject.deposit(100)).to be_truthy
+         
+        end
 
-    #     describe 'can not manage funds if no account has been created' do # Making sure an error occurs if the user doesn't have an account
-    #         it 'can\'t deposit funds' do
-    #             expect { subject.deposit(100) }.to raise_error(RuntimeError, 'No account present')
-    #         end
-    #     end
+         describe 'can not manage funds if no account has been created' do # Making sure an error occurs if the user doesn't have an account
+             it 'can\'t deposit funds' do
+                 expect { subject.deposit(100) }.to raise_error(RuntimeError, 'No account present')
+             end
+         end
 
-    # end
+    end
 
 end

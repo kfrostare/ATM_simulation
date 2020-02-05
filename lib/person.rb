@@ -5,7 +5,23 @@ class Person # Creating blueprints for the Person that uses the account
         @cash = 0
         set_name(attrs[:name]) # Looks to the attribute to set the name of the person
         @account = nil
+        @balance = 0
     end
+
+    def create_account
+        @account = Account.new(owner: self)
+    end
+
+    private
+
+    def deposit_funds(amount)
+        @balance += amount 
+        @cash -= amount
+    end
+
+    def deposit(amount)
+        @account == nil ? missing_account : deposit_funds(amount)
+    end 
 
     def set_name(obj) # Declaring the attribute "name" as an object and setting it as name
         obj = nil ? missing_name : @name = obj
@@ -19,10 +35,8 @@ class Person # Creating blueprints for the Person that uses the account
         obj = @owner = @name
     end
 
-    def create_account
-        @account = Account.new(owner: self)
+    def missing_account # 
+        raise RuntimeError, 'No account present'
     end
-
-
 
 end 
