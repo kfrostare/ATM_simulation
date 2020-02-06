@@ -1,32 +1,39 @@
-# atm_challenge_2019
+# ATM Challenge
+Code pairing: *Kayla Woodbury*, *Karolina Frostare*
 
-In order to make a withdrawl the ATM needs to have funds. 
+## Code overview
+This software creates a digital ATM using Ruby and RSpec testing.The goal is to simulate an actual ATM where:
 
-In order to know if the withdrawl was successful or unsuccessful, the user should receive a message with withdrawl details
+* ATM must have funds for user to make a withdrawal
+* User should receive message if withdrawal was successful or unsuccessful
+* Each person can only withdraw from their own account
+* Withdrawals can only be made if sufficient funds are available
+* Each account will have a unique pin code
+* Each account must be active
+* Bills distributed in the denominations of $5, $10 and $20
+* In order to withdraw or deposit users must access their account
 
-In order for the right person to make a withdrawl, each person whould have separate accounts
+## Dependencies
 
-           
-In order to ensure that an Account holder can only withdraw funds that he has balance for           
-I want to allow a withdrawal only if there are sufficient funds in the account
+* Ruby
+* Gems: Rspec, Pry-ByeBug
 
-As an ATM operator
-In order for our customers to withdraw funds
-I need to make sure that we only allow withdrawals if there
-are funds available
+## Setup
+To access this code visit [GitHub](https://github.com/kfrostare/atm_challenge_2019) repo and complete the following steps:
 
-As a Customer              
-To keep my funds secure             
-I want a secure Pin code & an expiry date on my card that allows only me access to my funds
+1. Fork the repo and clone
+2. Have Ruby and Gem bundler installed
+3. Utilize IRB to run program
 
-As an ATM operator             
-In order to allow access to active customers             
-I want to allow withdrawals from only active accounts
+## Instructions
+Instructions for running in IRB.
 
-As a Bank Customer    
-In order to withdraw funds in even amounts  
-I want to receive funds in 5, 10 & 20$ bills
+**Activate virtual ATM** | atm = ATM.new 
 
-As a Customer
-In order to manage my funds
-I need to have a personal account
+**Create virtual person** | person = Person.new(name: *your_name*)
+
+**Create personal account** | account = Account.new(owner: *your_name*) Generates an account with number, expiration date, pin code, account status, owner and balance. 
+
+**Deposit funds into account** | person.deposit(*desired_amount*)
+
+**Withdraw funds** | person.withdraw(amount: *desired_amount*, pin: *)
