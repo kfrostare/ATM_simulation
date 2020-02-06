@@ -17,14 +17,15 @@ class Person # Creating blueprints for the Person that uses the account
         @account == nil ? missing_account : deposit_funds(amount)
     end
 
-    def withdraw(amount)
+    def withdraw(args = {})
+        @account == nil ? missing_account : withdraw_funds(args)
+    end
+
+    def withdraw_funds(args)
+        args[:atm] == nil ? missing_atm : args[:atm] = ATM
         amount = amount
         pin = @account.pin_code
         account = @account
-    end
-
-    def atm_present(atm) # 
-        atm == nil ? missing_atm : atm = atm
     end
 
     def missing_atm # 

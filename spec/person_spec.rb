@@ -1,6 +1,7 @@
 require './lib/person.rb' # This makes it possible for the tests to gather class info
 require './lib/atm.rb' # This makes it possible for the tests to gather class info
 #require './lib/account.rb'
+require 'pry'
 
 describe Person do 
     subject { described_class.new(name: 'Thomas')} # Establishing new instance with Thomas as the account holder/person
@@ -55,7 +56,7 @@ describe Person do
 
         it 'can withdraw funds' do 
             command = lambda { 
-                subject.withdraw(
+                subject.withdraw(                   
                     amount: 100, 
                     pin: subject.account.pin_code, 
                     account: subject.account,
@@ -66,11 +67,12 @@ describe Person do
         end
 
         it 'withdraw is expected to raise an error if no ATM is passed in' do
+            #binding.pry
             command = lambda {
                 subject.withdraw(
                     amount: 100,
                     pin: subject.account.pin_code,
-                    account: subect.account
+                    account: subject.account
                 )
             }
             expect { command.call }.to raise_error 'An ATM is required'
@@ -82,11 +84,11 @@ describe Person do
             subject.withdraw(
                 amount: 100,
                 pin: subject.account.pin_code,
-                account: subect.account,
+                account: subject.account,
                 atm: atm
             )
-            expect(subect.account.balance).to be 0
-            expect(subect.cash).to be 100
+            expect(subject.account.balance).to be 0
+            expect(subject.cash).to be 100
         end
     end
 
