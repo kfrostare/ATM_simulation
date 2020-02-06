@@ -23,9 +23,11 @@ class Person # Creating blueprints for the Person that uses the account
 
     def withdraw_funds(args)
         args[:atm] == nil ? missing_atm : args[:atm] = ATM
-        amount = amount
+        amount = args[:amount]
         pin = @account.pin_code
         account = @account
+        @cash += args[:amount]
+        @account.balance -= args[:amount]
     end
 
     def missing_atm # 
