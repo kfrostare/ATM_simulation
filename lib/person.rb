@@ -12,15 +12,15 @@ class Person # Creating blueprints for the Person that uses the account
         @account = Account.new(owner: self)
     end
 
-    private
+    def deposit(amount)
+        @account == nil ? missing_account : deposit_funds(amount)
+    end
+
+    private # Private methods are dependent on other events in order to initialize
 
     def deposit_funds(amount)
         @balance += amount 
         @cash -= amount
-    end
-
-    def deposit(amount)
-        @account == nil ? missing_account : deposit_funds(amount)
     end 
 
     def set_name(obj) # Declaring the attribute "name" as an object and setting it as name
