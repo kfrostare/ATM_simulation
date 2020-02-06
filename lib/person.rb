@@ -1,11 +1,12 @@
+require './lib/account.rb'
+
 class Person # Creating blueprints for the Person that uses the account
-    attr_accessor :account, :owner, :name, :cash
+    attr_accessor :account,  :name, :cash
 
     def initialize (attrs = {})
         @cash = 0
         set_name(attrs[:name]) # Looks to the attribute to set the name of the person
-        @account = nil
-        @balance = 0
+        @account == nil
     end
 
     def create_account
@@ -16,12 +17,26 @@ class Person # Creating blueprints for the Person that uses the account
         @account == nil ? missing_account : deposit_funds(amount)
     end
 
+    def withdraw(amount)
+        amount = amount
+        pin = @account.pin_code
+        account = @account
+    end
+
+    def atm_present(atm) # 
+        atm == nil ? missing_atm : atm = atm
+    end
+
+    def missing_atm # 
+        raise 'An ATM is required'
+    end
+
     private # Private methods are dependent on other events in order to initialize
 
     def deposit_funds(amount)
-        @balance += amount 
         @cash -= amount
-    end 
+        @account.balance += amount
+      end 
 
     def set_name(obj) # Declaring the attribute "name" as an object and setting it as name
         obj == nil ? missing_name : @name = obj
