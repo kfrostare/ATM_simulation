@@ -1,6 +1,7 @@
 require './lib/atm.rb' 
+require './lib/account.rb'
 
-describe ATM do # Creating ATM class
+describe ATM do # Testing ATM class
     let(:account) { instance_double('Account', pin_code: '1234', exp_date: '04/22', account_status: :active) } # Setup dummie account + defining account as veriable
 
     before do
