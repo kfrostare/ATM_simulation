@@ -10,6 +10,7 @@ class Account # Creating blueprints for the User Account
         @pin_code = rand(1000..9999)
         @account_status = :active
         set_owner(attrs[:owner])
+        @balance = 0
        
     end # Setting a random pincode
 
