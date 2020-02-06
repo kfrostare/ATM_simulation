@@ -36,7 +36,7 @@ class Person # Creating blueprints for the Person that uses the account
     end
 
     def missing_account # 
-        raise RuntimeError 'No account present'
+        raise RuntimeError, 'No account present'
     end
 
 end 
