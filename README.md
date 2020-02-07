@@ -28,12 +28,47 @@ To access this code visit [GitHub](https://github.com/kfrostare/atm_challenge_20
 ## Instructions
 Instructions for running in IRB.
 
-**Activate virtual ATM** | atm = ATM.new 
+**Activate virtual ATM** | Generates an ATM ID and the funds value in the ATM 
 
-**Create virtual person** | person = Person.new(name: *your_name*)
+        atm = ATM.new
 
-**Create personal account** | account = Account.new(owner: *your_name*) Generates an account with number, expiration date, pin code, account status, owner and balance. 
 
-**Deposit funds into account** | person.deposit(*desired_amount*)
+**Create virtual person** | Generates a person ID, cash value and name
 
-**Withdraw funds** | person.withdraw(amount: *desired_amount*, pin: *)
+        person = Person.new(name: *your_name*)
+
+
+**Create personal account** | Generates an account ID, expiration date, pin code, account status, owner and balance.
+        
+        account = Account.new(owner: *your_name*) 
+
+
+**Deposit funds into account** | Adds entered amount to account balance, and subtracts from user's cash amount
+
+        person.deposit(*desired_amount*)
+
+**Withdraw funds** | Subtracts entered amount from account balance and from ATM funds
+
+        person.withdraw(amount: *desired_amount*, pin: *generated_pin*, account: *generated_account_id*, atm: *generated_atm_id*)
+
+**Notes**
+
+Trying to withdraw funds without the ATM ID will result in
+
+        An ATM is required
+
+Trying to withdraw funds without the generated account ID will result in 
+
+        No account present
+
+## Acknowledgements
+Material from [Craft Academy](learn.craftacademy.co) <br>
+[Ruby Documentation](rubymonstas.org) <br>
+[Rspec Program](rspec.info) <br>
+Material from the [Craftoverflow](https://github.com/CraftAcademy/CraftOverflow) repo on GitHub
+
+## Updates/Improvement Plans
+Yet to be determined.
+
+## License
+MIT License
