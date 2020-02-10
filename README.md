@@ -1,8 +1,8 @@
-# ATM Challenge
+# ATM Simulation
 Code pairing: *Kayla Woodbury*, *Karolina Frostare*
 
 ## Code overview
-This software creates a digital ATM using Ruby and RSpec testing.The goal is to simulate an actual ATM where:
+This software simulates a real life ATM using Ruby and RSpec testing.The goal is to simulate an actual ATM where:
 
 * ATM must have funds for user to make a withdrawal
 * User should receive message if withdrawal was successful or unsuccessful
