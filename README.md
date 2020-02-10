@@ -69,8 +69,8 @@ Trying to withdraw funds without the generated account ID will result in
 Material from [Craft Academy](learn.craftacademy.co) <br>
 [Ruby Documentation](rubymonstas.org) <br>
 [Rspec Program](rspec.info) <br>
-Material from the [Craftoverflow](https://github.com/CraftAcademy/CraftOverflow) repo on GitHub
-The image used was (royalty) free and provided by [Pixabay.com](https://pixabay.com/)
+Material from the [Craftoverflow](https://github.com/CraftAcademy/CraftOverflow) repo on GitHub <br>
+The image used was (royalty) free and provided by [Pixabay.com](https://pixabay.com/) <br>
 
 ## Updates/Improvement Plans
 Yet to be determined.
