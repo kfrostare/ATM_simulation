@@ -13,6 +13,10 @@ This software simulates a real life ATM using Ruby and RSpec testing.The goal is
 * Bills distributed in the denominations of $5, $10 and $20
 * In order to withdraw or deposit users must access their account
 
+*more information below image*
+
+![ATM simulation](/assets/atm_simulation.jpg)
+
 ## Dependencies
 
 * Ruby
